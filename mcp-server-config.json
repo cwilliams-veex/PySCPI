@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "scpi-converter": {
+      "command": "python",
+      "args": ["-m", "mcp_tools.scpi_converter_server"],
+      "description": "MCP server for converting C++ SCPI files to Python stub implementations",
+      "env": {
+        "PYTHONPATH": "."
+      }
+    }
+  }
+}
