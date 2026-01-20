@@ -562,6 +562,1131 @@ class ScpiPacket(object):
         # TODO: Implement query logic
         return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
 
+    def doResLinecodeLevel(self, parameters):
+        """**RES:LINECODE** - Process linecode error level commands.
+        
+        C++ Implementation Details:
+        - Calls TStartParse() with resLinecodeLevel table
+        - Sub-commands: COUNT?, ES?, AVGRATE?, CURRATE?
+        - Accesses idlStatPacket.lineCode structure
+        - No parameters at this level
+        
+        Python TODO:
+        - Implement sub-command parsing for linecode errors
+        - Support query commands for error counts and rates
+        """
+        response = None
+        # TODO: Implement linecode level parsing
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def doResCollisionLevel(self, parameters):
+        """**RES:COLLISION** - Process collision error level commands.
+        
+        C++ Implementation Details:
+        - Calls TStartParse() with resCollisionLevel table
+        - Sub-commands: COUNT?, ES?, AVGRATE?, CURRATE?
+        - Accesses idlStatPacket.collisions structure
+        - No parameters at this level
+        
+        Python TODO:
+        - Implement sub-command parsing for collision errors
+        - Support query commands for error counts and rates
+        """
+        response = None
+        # TODO: Implement collision level parsing
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def doResPfcsLevel(self, parameters):
+        """**RES:PFCS** - Process payload FCS error level commands.
+        
+        C++ Implementation Details:
+        - Calls TStartParse() with resPfcsLevel table
+        - Sub-commands: COUNT?, ES?, AVGRATE?, CURRATE?
+        - Accesses idlStatPacket.pfcs structure
+        - No parameters at this level
+        
+        Python TODO:
+        - Implement sub-command parsing for payload FCS errors
+        - Support query commands for error counts and rates
+        """
+        response = None
+        # TODO: Implement PFCS level parsing
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def doResIpChecksumLevel(self, parameters):
+        """**RES:IPCHECKSUM** - Process IP checksum error level commands.
+        
+        C++ Implementation Details:
+        - Calls TStartParse() with resIpChecksumLevel table
+        - Sub-commands: COUNT?, ES?, AVGRATE?, CURRATE?
+        - Accesses idlStatPacket.ipChecksum structure
+        - No parameters at this level
+        
+        Python TODO:
+        - Implement sub-command parsing for IP checksum errors
+        - Support query commands for error counts and rates
+        """
+        response = None
+        # TODO: Implement IP checksum level parsing
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def getCurrentErrors(self, parameters):
+        """**RES:SCANERRORS?** - Query all current errors in system.
+        
+        C++ Implementation Details:
+        - Uses callGetPacketStatistics() and callGetPacketStreamStatistics()
+        - Calls getErrorToken() for each error type in csPacketErrorNames array
+        - Returns concatenated error tokens for all active errors
+        - Checks allowed settings via callGetAllowedSettings()
+        - Returns "+0" if no errors present
+        
+        Python TODO:
+        - Call packet statistics methods
+        - Build error token list for all active errors
+        - Return formatted error token string
+        """
+        response = None
+        # TODO: Implement error scanning logic
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def doResFcAlignLevel(self, parameters):
+        """**RES:FCALIGN** - Process Fibre Channel alignment error level commands.
+        
+        C++ Implementation Details:
+        - Calls TStartParse() with resFcAlignLevel table
+        - Sub-commands: COUNT?, ES?, AVGRATE?, CURRATE?
+        - Accesses idlStatPacket.fcAlignment structure
+        - No parameters at this level
+        
+        Python TODO:
+        - Implement sub-command parsing for FC alignment errors
+        - Support query commands for error counts and rates
+        """
+        response = None
+        # TODO: Implement FC alignment level parsing
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def doResOversizedLevel(self, parameters):
+        """**RES:OVERSIZED** - Process oversized packet error level commands.
+        
+        C++ Implementation Details:
+        - Calls TStartParse() with resOversizedLevel table
+        - Sub-commands: COUNT?, ES?, AVGRATE?, CURRATE?
+        - Accesses idlStatPacket.oversized structure
+        - No parameters at this level
+        
+        Python TODO:
+        - Implement sub-command parsing for oversized packet errors
+        - Support query commands for error counts and rates
+        """
+        response = None
+        # TODO: Implement oversized level parsing
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def doResUndersizedLevel(self, parameters):
+        """**RES:UNDERSIZED** - Process undersized packet error level commands.
+        
+        C++ Implementation Details:
+        - Calls TStartParse() with resUndersizedLevel table
+        - Sub-commands: COUNT?, ES?, AVGRATE?, CURRATE?
+        - Accesses idlStatPacket.undersized structure
+        - No parameters at this level
+        
+        Python TODO:
+        - Implement sub-command parsing for undersized packet errors
+        - Support query commands for error counts and rates
+        """
+        response = None
+        # TODO: Implement undersized level parsing
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def doResCppLevel(self, parameters):
+        """**RES:LOSS** - Process carrier power loss level commands.
+        
+        C++ Implementation Details:
+        - Calls TStartParse() with resCppLevel table
+        - Sub-commands: SECS?
+        - Accesses idlStatPacket.cpPowerLoss.alarmSecs structure
+        - No parameters at this level
+        
+        Python TODO:
+        - Implement sub-command parsing for carrier power loss
+        - Support query commands for alarm seconds
+        """
+        response = None
+        # TODO: Implement CPP level parsing
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def doResLosLevel(self, parameters):
+        """**RES:LOS** - Process loss of signal level commands.
+        
+        C++ Implementation Details:
+        - Calls TStartParse() with resLosLevel table
+        - Sub-commands: SECS?
+        - Accesses idlStatPacket.los.alarmSecs structure
+        - No parameters at this level
+        
+        Python TODO:
+        - Implement sub-command parsing for loss of signal
+        - Support query commands for alarm seconds
+        """
+        response = None
+        # TODO: Implement LOS level parsing
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def doResLinkLevel(self, parameters):
+        """**RES:LINK** - Process link status level commands.
+        
+        C++ Implementation Details:
+        - Calls TStartParse() with resLinkLevel table
+        - Sub-commands: SECS?
+        - Accesses idlStatPacket.link.alarmSecs structure
+        - No parameters at this level
+        
+        Python TODO:
+        - Implement sub-command parsing for link status
+        - Support query commands for alarm seconds
+        """
+        response = None
+        # TODO: Implement link level parsing
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def getResTxPackets(self, parameters):
+        """**RES:TXPACK?** - Query the count of transmitted packets.
+        
+        C++ Implementation Details:
+        - Uses callGetPacketStatistics() to get IdlPacket2Stats structure
+        - Returns idlStatPacket.txPackets.count field
+        - Format: signed 64-bit integer ("%I64i")
+        - No parameters required
+        
+        Python TODO:
+        - Call veexlib packet statistics method
+        - Return txPackets.count as bytes
+        """
+        response = None
+        # TODO: Implement query logic
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def getResRxPackets(self, parameters):
+        """**RES:RXPACK?** - Query the count of received packets.
+        
+        C++ Implementation Details:
+        - Uses callGetPacketStatistics() to get IdlPacket2Stats structure
+        - Returns idlStatPacket.rxPackets.count field
+        - Format: signed 64-bit integer ("%I64i")
+        - No parameters required
+        
+        Python TODO:
+        - Call veexlib packet statistics method
+        - Return rxPackets.count as bytes
+        """
+        response = None
+        # TODO: Implement query logic
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def getResTxBytes(self, parameters):
+        """**RES:TXBYT?** - Query the count of transmitted bytes.
+        
+        C++ Implementation Details:
+        - Uses callGetPacketStatistics() to get IdlPacket2Stats structure
+        - Returns idlStatPacket.txBytes.count field
+        - Format: signed 64-bit integer ("%I64i")
+        - No parameters required
+        
+        Python TODO:
+        - Call veexlib packet statistics method
+        - Return txBytes.count as bytes
+        """
+        response = None
+        # TODO: Implement query logic
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def getResRxBytes(self, parameters):
+        """**RES:RXBYT?** - Query the count of received bytes.
+        
+        C++ Implementation Details:
+        - Uses callGetPacketStatistics() to get IdlPacket2Stats structure
+        - Returns idlStatPacket.rxBytes.count field
+        - Format: signed 64-bit integer ("%I64i")
+        - No parameters required
+        
+        Python TODO:
+        - Call veexlib packet statistics method
+        - Return rxBytes.count as bytes
+        """
+        response = None
+        # TODO: Implement query logic
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def getResRxJumboPackets(self, parameters):
+        """**RES:JUMBO?** - Query the count of received jumbo packets.
+        
+        C++ Implementation Details:
+        - Uses callGetPacketStatistics() to get IdlPacket2Stats structure
+        - Returns idlStatPacket.rxJumboPackets.count field
+        - Format: signed 64-bit integer ("%I64i")
+        - No parameters required
+        
+        Python TODO:
+        - Call veexlib packet statistics method
+        - Return rxJumboPackets.count as bytes
+        """
+        response = None
+        # TODO: Implement query logic
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def doResPauseLevel(self, parameters):
+        """**RES:PAUSE** - Process pause packet level commands.
+        
+        C++ Implementation Details:
+        - Calls TStartParse() with resPauseLevel table
+        - Sub-commands: TX?, RX?, SECS?
+        - Accesses idlStatPacket.pauseTx, pauseRx, ppPaused structures
+        - No parameters at this level
+        
+        Python TODO:
+        - Implement sub-command parsing for pause packets
+        - Support query commands for TX/RX counts and alarm seconds
+        """
+        response = None
+        # TODO: Implement pause level parsing
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def doResTxPacketLevel(self, parameters):
+        """**RES:TXPACK** - Process TX packet level commands.
+        
+        C++ Implementation Details:
+        - Calls TStartParse() with resTxPacketLevel table
+        - Sub-commands: IDLE?
+        - Accesses idlStatPacket.txGfpIdlePackets structure
+        - No parameters at this level
+        
+        Python TODO:
+        - Implement sub-command parsing for TX packets
+        - Support query commands for idle packets
+        """
+        response = None
+        # TODO: Implement TX packet level parsing
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def doResVlanLevel(self, parameters):
+        """**RES:VLAN** - Process VLAN level commands.
+        
+        C++ Implementation Details:
+        - Calls TStartParse() with resVlanLevel table
+        - Sub-commands include various VLAN-related queries
+        - Accesses VLAN-specific fields in IdlPacket2Stats
+        - No parameters at this level
+        
+        Python TODO:
+        - Implement sub-command parsing for VLAN statistics
+        - Support query commands for VLAN-tagged traffic
+        """
+        response = None
+        # TODO: Implement VLAN level parsing
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def getResTxLinkPctBandwidthNone(self, parameters):
+        """**RES:TXPCTBW?** - Query TX link percent bandwidth utilization.
+        
+        C++ Implementation Details:
+        - Uses callGetPacketStatistics() to get IdlPacket2Stats structure
+        - Returns idlStatPacket.txLinkPctBandwidth field
+        - Format: float divided by 100, displayed as "%.2f"
+        - No parameters required
+        
+        Python TODO:
+        - Call veexlib packet statistics method
+        - Return txLinkPctBandwidth / 100 as formatted bytes
+        """
+        response = None
+        # TODO: Implement query logic
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def getResRxLinkPctBandwidthNone(self, parameters):
+        """**RES:RXPCTBW?** - Query RX link percent bandwidth utilization.
+        
+        C++ Implementation Details:
+        - Uses callGetPacketStatistics() to get IdlPacket2Stats structure
+        - Returns idlStatPacket.rxLinkPctBandwidth field
+        - Format: float divided by 100, displayed as "%.2f"
+        - No parameters required
+        
+        Python TODO:
+        - Call veexlib packet statistics method
+        - Return rxLinkPctBandwidth / 100 as formatted bytes
+        """
+        response = None
+        # TODO: Implement query logic
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def getResTxLinkPacketPerSecNone(self, parameters):
+        """**RES:TXPPS?** - Query TX link packets per second.
+        
+        C++ Implementation Details:
+        - Uses callGetPacketStatistics() to get IdlPacket2Stats structure
+        - Returns idlStatPacket.txLinkPacketPerSec field
+        - Format: unsigned 32-bit integer ("%u")
+        - No parameters required
+        
+        Python TODO:
+        - Call veexlib packet statistics method
+        - Return txLinkPacketPerSec as bytes
+        """
+        response = None
+        # TODO: Implement query logic
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def getResRxLinkPacketPerSecNone(self, parameters):
+        """**RES:RXPPS?** - Query RX link packets per second.
+        
+        C++ Implementation Details:
+        - Uses callGetPacketStatistics() to get IdlPacket2Stats structure
+        - Returns idlStatPacket.rxLinkPacketPerSec field
+        - Format: unsigned 32-bit integer ("%u")
+        - No parameters required
+        
+        Python TODO:
+        - Call veexlib packet statistics method
+        - Return rxLinkPacketPerSec as bytes
+        """
+        response = None
+        # TODO: Implement query logic
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def getResTxLinkKBPerSecNone(self, parameters):
+        """**RES:TXMBPS?** - Query TX link megabits per second.
+        
+        C++ Implementation Details:
+        - Uses callGetPacketStatistics() to get IdlPacket2Stats structure
+        - Returns idlStatPacket.txLinkKBPerSec field
+        - Format: float displayed as "%.3f"
+        - No parameters required
+        
+        Python TODO:
+        - Call veexlib packet statistics method
+        - Return txLinkKBPerSec as formatted bytes
+        """
+        response = None
+        # TODO: Implement query logic
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def getResRxLinkKBPerSecNone(self, parameters):
+        """**RES:RXMBPS?** - Query RX link megabits per second.
+        
+        C++ Implementation Details:
+        - Uses callGetPacketStatistics() to get IdlPacket2Stats structure
+        - Returns idlStatPacket.rxLinkKBPerSec field
+        - Format: float displayed as "%.3f"
+        - No parameters required
+        
+        Python TODO:
+        - Call veexlib packet statistics method
+        - Return rxLinkKBPerSec as formatted bytes
+        """
+        response = None
+        # TODO: Implement query logic
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def getResSPM(self, parameters):
+        """**RES:SPM?** - Query Stream Performance Monitoring data.
+        
+        C++ Implementation Details:
+        - Uses callGetPacketStatistics() and callGetPacketStreamStatistics()
+        - Returns comprehensive SPM data for all streams
+        - Complex format with multiple error and alarm counts
+        - Includes stream sequence, bit errors, and pattern sync data
+        
+        Python TODO:
+        - Call packet and stream statistics methods
+        - Build comprehensive SPM data string
+        - Return formatted SPM data as bytes
+        """
+        response = None
+        # TODO: Implement SPM query logic
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def getResSTSD(self, parameters):
+        """**RES:STSD?** - Query Stream Test Summary Data.
+        
+        C++ Implementation Details:
+        - Uses callGetPacketStatistics() and callGetPacketStreamStatistics()
+        - Returns comprehensive STSD data including error counts and seconds
+        - Includes linecode, UDP checksum, FCS, IP checksum errors
+        - Includes stream sequence, bit errors, and alarm seconds
+        - Complex CSV format with quoted values
+        
+        Python TODO:
+        - Call packet and stream statistics methods
+        - Build comprehensive STSD data string
+        - Return formatted STSD data as bytes
+        """
+        response = None
+        # TODO: Implement STSD query logic
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def getEventLog(self, parameters):
+        """**RES:EVENTLOG** - Query event log entries.
+        
+        C++ Implementation Details:
+        - Accesses event log system
+        - Returns formatted event log entries
+        - May require parameters for filtering
+        
+        Python TODO:
+        - Implement event log access
+        - Return formatted event log data as bytes
+        """
+        response = None
+        # TODO: Implement event log query logic
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def doResRfLevel(self, parameters):
+        """**RES:RF** - Process remote fault level commands.
+        
+        C++ Implementation Details:
+        - Calls TStartParse() with resRfLevel table
+        - Sub-commands: SECS? (already implemented separately)
+        - Accesses idlStatPacket.remoteLinkFault structure
+        - No parameters at this level
+        
+        Python TODO:
+        - Implement sub-command parsing for remote fault
+        - Support query commands for alarm seconds
+        """
+        response = None
+        # TODO: Implement RF level parsing
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def doResLfdLevel(self, parameters):
+        """**RES:LFD** - Process local fault detect level commands.
+        
+        C++ Implementation Details:
+        - Calls TStartParse() with resLfdLevel table
+        - Sub-commands for local fault detection queries
+        - Accesses local fault detection structures
+        - No parameters at this level
+        
+        Python TODO:
+        - Implement sub-command parsing for local fault detect
+        - Support query commands for fault detection
+        """
+        response = None
+        # TODO: Implement LFD level parsing
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def doResUnCorrCHecLevel(self, parameters):
+        """**RES:UCHEC** - Process uncorrectable CHEC error level commands.
+        
+        C++ Implementation Details:
+        - Calls TStartParse() with resUnCorrCHecLevel table
+        - Sub-commands: COUNT?, ES?, AVGRATE?, CURRATE?
+        - Accesses idlStatPacket.uncorrectableCHec structure
+        - No parameters at this level
+        
+        Python TODO:
+        - Implement sub-command parsing for uncorrectable CHEC errors
+        - Support query commands for error counts and rates
+        """
+        response = None
+        # TODO: Implement uncorrectable CHEC level parsing
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def doResCorrCHecLevel(self, parameters):
+        """**RES:CHEC** - Process correctable CHEC error level commands.
+        
+        C++ Implementation Details:
+        - Calls TStartParse() with resCorrCHecLevel table
+        - Sub-commands: COUNT?, ES?, AVGRATE?, CURRATE?
+        - Accesses idlStatPacket.correctableCHec structure
+        - No parameters at this level
+        
+        Python TODO:
+        - Implement sub-command parsing for correctable CHEC errors
+        - Support query commands for error counts and rates
+        """
+        response = None
+        # TODO: Implement correctable CHEC level parsing
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def doResUnCorrTHecLevel(self, parameters):
+        """**RES:UTHEC** - Process uncorrectable THEC error level commands.
+        
+        C++ Implementation Details:
+        - Calls TStartParse() with resUnCorrTHecLevel table
+        - Sub-commands: COUNT?, ES?, AVGRATE?, CURRATE?
+        - Accesses idlStatPacket.uncorrectableTHec structure
+        - No parameters at this level
+        
+        Python TODO:
+        - Implement sub-command parsing for uncorrectable THEC errors
+        - Support query commands for error counts and rates
+        """
+        response = None
+        # TODO: Implement uncorrectable THEC level parsing
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def doResCorrTHecLevel(self, parameters):
+        """**RES:THEC** - Process correctable THEC error level commands.
+        
+        C++ Implementation Details:
+        - Calls TStartParse() with resCorrTHecLevel table
+        - Sub-commands: COUNT?, ES?, AVGRATE?, CURRATE?
+        - Accesses idlStatPacket.correctableTHec structure
+        - No parameters at this level
+        
+        Python TODO:
+        - Implement sub-command parsing for correctable THEC errors
+        - Support query commands for error counts and rates
+        """
+        response = None
+        # TODO: Implement correctable THEC level parsing
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def doResUnCorrEHecLevel(self, parameters):
+        """**RES:UEHEC** - Process uncorrectable EHEC error level commands.
+        
+        C++ Implementation Details:
+        - Calls TStartParse() with resUnCorrEHecLevel table
+        - Sub-commands: COUNT?, ES?, AVGRATE?, CURRATE?
+        - Accesses idlStatPacket.uncorrectableEHec structure
+        - No parameters at this level
+        
+        Python TODO:
+        - Implement sub-command parsing for uncorrectable EHEC errors
+        - Support query commands for error counts and rates
+        """
+        response = None
+        # TODO: Implement uncorrectable EHEC level parsing
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def doResCorrEHecLevel(self, parameters):
+        """**RES:EHEC** - Process correctable EHEC error level commands.
+        
+        C++ Implementation Details:
+        - Calls TStartParse() with resCorrEHecLevel table
+        - Sub-commands: COUNT?, ES?, AVGRATE?, CURRATE?
+        - Accesses idlStatPacket.correctableEHec structure
+        - No parameters at this level
+        
+        Python TODO:
+        - Implement sub-command parsing for correctable EHEC errors
+        - Support query commands for error counts and rates
+        """
+        response = None
+        # TODO: Implement correctable EHEC level parsing
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def doResSfcsLevel(self, parameters):
+        """**RES:SFCS** - Process superblock FCS error level commands.
+        
+        C++ Implementation Details:
+        - Calls TStartParse() with resSfcsLevel table
+        - Sub-commands: COUNT?, ES?, AVGRATE?, CURRATE?
+        - Accesses idlStatPacket.superFcs structure
+        - No parameters at this level
+        
+        Python TODO:
+        - Implement sub-command parsing for superblock FCS errors
+        - Support query commands for error counts and rates
+        """
+        response = None
+        # TODO: Implement SFCS level parsing
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def doResLfLevel(self, parameters):
+        """**RES:LF** - Process local fault level commands.
+        
+        C++ Implementation Details:
+        - Calls TStartParse() with resLfLevel table
+        - Sub-commands: SECS? (already implemented separately)
+        - Accesses idlStatPacket.localLinkFault structure
+        - No parameters at this level
+        
+        Python TODO:
+        - Implement sub-command parsing for local fault
+        - Support query commands for alarm seconds
+        """
+        response = None
+        # TODO: Implement LF level parsing
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def doResLoccsLevel(self, parameters):
+        """**RES:LOCCS** - Process loss of character sync level commands.
+        
+        C++ Implementation Details:
+        - Calls TStartParse() with resLoccsLevel table
+        - Sub-commands for character sync loss queries
+        - Accesses character sync structures
+        - No parameters at this level
+        
+        Python TODO:
+        - Implement sub-command parsing for loss of character sync
+        - Support query commands for sync loss
+        """
+        response = None
+        # TODO: Implement LOCCS level parsing
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def doResLocLevel(self, parameters):
+        """**RES:LOCS** - Process loss of clock level commands.
+        
+        C++ Implementation Details:
+        - Calls TStartParse() with resLocLevel table
+        - Sub-commands for clock loss queries
+        - Accesses clock loss structures
+        - No parameters at this level
+        
+        Python TODO:
+        - Implement sub-command parsing for loss of clock
+        - Support query commands for clock loss
+        """
+        response = None
+        # TODO: Implement LOCS level parsing
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def doResFcsLevel(self, parameters):
+        """**RES:FCS** or **RES:CRC** - Process FCS/CRC error level commands.
+        
+        C++ Implementation Details:
+        - Calls TStartParse() with resFcsLevel table
+        - Sub-commands: COUNT?, ES?, AVGRATE?, CURRATE?
+        - Accesses idlStatPacket.fcs structure
+        - No parameters at this level
+        
+        Python TODO:
+        - Implement sub-command parsing for FCS errors
+        - Support query commands for error counts and rates
+        """
+        response = None
+        # TODO: Implement FCS level parsing
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def getFabricLoginStatus(self, parameters):
+        """**RES:FABRICLOGIN?** - Query Fibre Channel fabric login status.
+        
+        C++ Implementation Details:
+        - Uses callGetPacketStatistics() to get IdlPacket2Stats structure
+        - Returns fabric login status
+        - Format depends on login state
+        - No parameters required
+        
+        Python TODO:
+        - Call veexlib packet statistics method
+        - Return fabric login status as bytes
+        """
+        response = None
+        # TODO: Implement query logic
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def getPortLoginStatus(self, parameters):
+        """**RES:PORTLOGIN?** - Query Fibre Channel port login status.
+        
+        C++ Implementation Details:
+        - Uses callGetPacketStatistics() to get IdlPacket2Stats structure
+        - Returns port login status
+        - Format depends on login state
+        - No parameters required
+        
+        Python TODO:
+        - Call veexlib packet statistics method
+        - Return port login status as bytes
+        """
+        response = None
+        # TODO: Implement query logic
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def doResFcDispLevel(self, parameters):
+        """**RES:FCDISP** - Process FC disparity error level commands.
+        
+        C++ Implementation Details:
+        - Calls TStartParse() with resFcDispLevel table
+        - Sub-commands for FC disparity error queries
+        - Accesses FC disparity structures
+        - No parameters at this level
+        
+        Python TODO:
+        - Implement sub-command parsing for FC disparity errors
+        - Support query commands for disparity errors
+        """
+        response = None
+        # TODO: Implement FC disparity level parsing
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def doResFcEofALevel(self, parameters):
+        """**RES:FCEOFA** - Process FC EOF abort level commands.
+        
+        C++ Implementation Details:
+        - Calls TStartParse() with resFcEofALevel table
+        - Sub-commands: COUNT?, ES?, AVGRATE?, CURRATE?
+        - Accesses idlStatPacket.fcEofAbort structure
+        - No parameters at this level
+        
+        Python TODO:
+        - Implement sub-command parsing for FC EOF abort
+        - Support query commands for error counts and rates
+        """
+        response = None
+        # TODO: Implement FC EOF abort level parsing
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def doResRuntLevel(self, parameters):
+        """**RES:RUNT** - Process runt packet error level commands.
+        
+        C++ Implementation Details:
+        - Calls TStartParse() with resRuntLevel table
+        - Sub-commands: COUNT?, ES?, AVGRATE?, CURRATE?
+        - Accesses idlStatPacket.runt structure
+        - No parameters at this level
+        
+        Python TODO:
+        - Implement sub-command parsing for runt packet errors
+        - Support query commands for error counts and rates
+        """
+        response = None
+        # TODO: Implement runt level parsing
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def doResInvSuperLevel(self, parameters):
+        """**RES:INVSUPER** - Process invalid superblock error level commands.
+        
+        C++ Implementation Details:
+        - Calls TStartParse() with resInvSuperLevel table
+        - Sub-commands: COUNT?, ES?, AVGRATE?, CURRATE?
+        - Accesses idlStatPacket.invalidSuper structure
+        - No parameters at this level
+        
+        Python TODO:
+        - Implement sub-command parsing for invalid superblock errors
+        - Support query commands for error counts and rates
+        """
+        response = None
+        # TODO: Implement invalid superblock level parsing
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def doResJabberLevel(self, parameters):
+        """**RES:JABBER** - Process jabber packet level commands.
+        
+        C++ Implementation Details:
+        - Calls TStartParse() with resJabberLevel table
+        - Sub-commands: COUNT?, ES?, SECS?
+        - Accesses idlStatPacket.jabber structure
+        - No parameters at this level
+        
+        Python TODO:
+        - Implement sub-command parsing for jabber packets
+        - Support query commands for error counts and alarm seconds
+        """
+        response = None
+        # TODO: Implement jabber level parsing
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def doResTcpChecksumLevel(self, parameters):
+        """**RES:TCPERR** - Process TCP checksum error level commands.
+        
+        C++ Implementation Details:
+        - Calls TStartParse() with resTcpChecksumLevel table
+        - Sub-commands: COUNT?, ES?, AVGRATE?, CURRATE?
+        - Accesses idlStatPacket.tcpChecksum structure
+        - No parameters at this level
+        
+        Python TODO:
+        - Implement sub-command parsing for TCP checksum errors
+        - Support query commands for error counts and rates
+        """
+        response = None
+        # TODO: Implement TCP checksum level parsing
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def doResUdpChecksumLevel(self, parameters):
+        """**RES:UDPERR** - Process UDP checksum error level commands.
+        
+        C++ Implementation Details:
+        - Calls TStartParse() with resUdpChecksumLevel table
+        - Sub-commands: COUNT?, ES?, AVGRATE?, CURRATE?
+        - Accesses idlStatPacket.udpChecksum structure
+        - No parameters at this level
+        
+        Python TODO:
+        - Implement sub-command parsing for UDP checksum errors
+        - Support query commands for error counts and rates
+        """
+        response = None
+        # TODO: Implement UDP checksum level parsing
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def getCurrentAlarms(self, parameters):
+        """**RES:SCANALARMS?** - Query all current alarms in system.
+        
+        C++ Implementation Details:
+        - Uses callGetPacketStatistics() and callGetPacketStreamStatistics()
+        - Calls getAlarmToken() for each alarm type
+        - Returns concatenated alarm tokens for all active alarms
+        - Returns "+0" if no alarms present
+        
+        Python TODO:
+        - Call packet statistics methods
+        - Build alarm token list for all active alarms
+        - Return formatted alarm token string
+        """
+        response = None
+        # TODO: Implement alarm scanning logic
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def doResFcEofErrLevel(self, parameters):
+        """**RES:FCEOFERR** - Process FC EOF error level commands.
+        
+        C++ Implementation Details:
+        - Calls TStartParse() with resFcEofErrLevel table
+        - Sub-commands: COUNT?, ES?, AVGRATE?, CURRATE?
+        - Accesses idlStatPacket.fcEofErr structure
+        - No parameters at this level
+        
+        Python TODO:
+        - Implement sub-command parsing for FC EOF errors
+        - Support query commands for error counts and rates
+        """
+        response = None
+        # TODO: Implement FC EOF error level parsing
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def doResAlarmLevel(self, parameters):
+        """**RES:AL** - Process alarm level commands.
+        
+        C++ Implementation Details:
+        - Calls TStartParse() with resAlarmLevel table
+        - Sub-commands for various alarm queries
+        - Accesses alarm structures
+        - No parameters at this level
+        
+        Python TODO:
+        - Implement sub-command parsing for alarms
+        - Support query commands for alarm status
+        """
+        response = None
+        # TODO: Implement alarm level parsing
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def doResDisparityLevel(self, parameters):
+        """**RES:DISPARITY** - Process disparity error level commands.
+        
+        C++ Implementation Details:
+        - Calls TStartParse() with resDisparityLevel table
+        - Sub-commands: COUNT?, ES?, AVGRATE?, CURRATE?
+        - Accesses idlStatPacket.disparity structure
+        - No parameters at this level
+        
+        Python TODO:
+        - Implement sub-command parsing for disparity errors
+        - Support query commands for error counts and rates
+        """
+        response = None
+        # TODO: Implement disparity level parsing
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def doResCaptureLevel(self, parameters):
+        """**RES:CAPTURE** - Process packet capture level commands.
+        
+        C++ Implementation Details:
+        - Calls TStartParse() with resCaptureLevel table
+        - Sub-commands for packet capture control and queries
+        - Accesses packet capture structures
+        - No parameters at this level
+        
+        Python TODO:
+        - Implement sub-command parsing for packet capture
+        - Support query and control commands
+        """
+        response = None
+        # TODO: Implement capture level parsing
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def doResHdrMMLevel(self, parameters):
+        """**RES:HDRMM** - Process header mismatch level commands.
+        
+        C++ Implementation Details:
+        - Calls TStartParse() with resHdrMMLevel table
+        - Sub-commands for header mismatch queries
+        - Accesses header mismatch structures
+        - No parameters at this level
+        
+        Python TODO:
+        - Implement sub-command parsing for header mismatches
+        - Support query commands for mismatch detection
+        """
+        response = None
+        # TODO: Implement header mismatch level parsing
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def doResRxPacketLevel(self, parameters):
+        """**RES:RXPACK** - Process RX packet level commands.
+        
+        C++ Implementation Details:
+        - Calls TStartParse() with resRxPacketLevel table
+        - Sub-commands: IDLE?
+        - Accesses idlStatPacket.rxGfpIdlePackets structure
+        - No parameters at this level
+        
+        Python TODO:
+        - Implement sub-command parsing for RX packets
+        - Support query commands for idle packets
+        """
+        response = None
+        # TODO: Implement RX packet level parsing
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def doResUtilLevel(self, parameters):
+        """**RES:UTIL** - Process utilization level commands.
+        
+        C++ Implementation Details:
+        - Calls TStartParse() with resUtilLevel table
+        - Sub-commands: CUR, AVG, MAX, MIN, MPLS, VLAN, IPV4, IPV6, L1, L2
+        - Accesses utilization structures
+        - No parameters at this level
+        
+        Python TODO:
+        - Implement sub-command parsing for utilization
+        - Support query commands for various utilization metrics
+        """
+        response = None
+        # TODO: Implement utilization level parsing
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def doResMplsLevel(self, parameters):
+        """**RES:MPLS** - Process MPLS level commands.
+        
+        C++ Implementation Details:
+        - Calls TStartParse() with resMplsLevel table
+        - Sub-commands for MPLS-related queries
+        - Accesses MPLS-specific fields
+        - Requires MPLS license
+        
+        Python TODO:
+        - Implement sub-command parsing for MPLS statistics
+        - Support query commands for MPLS-tagged traffic
+        """
+        response = None
+        # TODO: Implement MPLS level parsing
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def doResPacketLevel(self, parameters):
+        """**RES:PACK** - Process packet level commands.
+        
+        C++ Implementation Details:
+        - Calls TStartParse() with resPacketLevel table
+        - Sub-commands for general packet queries
+        - Accesses packet structures
+        - No parameters at this level
+        
+        Python TODO:
+        - Implement sub-command parsing for packet statistics
+        - Support query commands for packet data
+        """
+        response = None
+        # TODO: Implement packet level parsing
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def getResOversizedCount(self, parameters):
+        """**RES:SUPJUMBO?** - Query the count of super jumbo packets.
+        
+        C++ Implementation Details:
+        - Uses callGetPacketStatistics() to get IdlPacket2Stats structure
+        - Returns idlStatPacket.rxSuperJumboPackets.count field
+        - Format: signed 64-bit integer ("%I64i")
+        - No parameters required
+        
+        Python TODO:
+        - Call veexlib packet statistics method
+        - Return rxSuperJumboPackets.count as bytes
+        """
+        response = None
+        # TODO: Implement query logic
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def doResSyncHdrLevel(self, parameters):
+        """**RES:SYNCHDR** - Process sync header error level commands.
+        
+        C++ Implementation Details:
+        - Calls TStartParse() with resSyncHdrLevel table
+        - Sub-commands: COUNT?, ES?, AVGRATE?, CURRATE?
+        - Accesses idlStatPacket.syncHdr structure
+        - No parameters at this level
+        
+        Python TODO:
+        - Implement sub-command parsing for sync header errors
+        - Support query commands for error counts and rates
+        """
+        response = None
+        # TODO: Implement sync header level parsing
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def doResBlockLockLossLevel(self, parameters):
+        """**RES:BLKLOC** - Process block lock loss level commands.
+        
+        C++ Implementation Details:
+        - Calls TStartParse() with resBlockLockLossLevel table
+        - Sub-commands: SECS? (already implemented separately)
+        - Accesses idlStatPacket.blockLockLoss structure
+        - No parameters at this level
+        
+        Python TODO:
+        - Implement sub-command parsing for block lock loss
+        - Support query commands for alarm seconds
+        """
+        response = None
+        # TODO: Implement block lock loss level parsing
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def doResHiBerLevel(self, parameters):
+        """**RES:HIBER** - Process high BER level commands.
+        
+        C++ Implementation Details:
+        - Calls TStartParse() with resHiBerLevel table
+        - Sub-commands: SECS? (already implemented separately)
+        - Accesses idlStatPacket.hiBER structure
+        - No parameters at this level
+        
+        Python TODO:
+        - Implement sub-command parsing for high BER
+        - Support query commands for alarm seconds
+        """
+        response = None
+        # TODO: Implement high BER level parsing
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def getCaptureStatus(self, parameters):
+        """**RES:CAPSTATUS?** - Query packet capture status.
+        
+        C++ Implementation Details:
+        - Queries packet capture system status
+        - Returns capture state (running, stopped, etc.)
+        - No parameters required
+        
+        Python TODO:
+        - Call packet capture status method
+        - Return capture status as bytes
+        """
+        response = None
+        # TODO: Implement query logic
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
+    def getCaptureCount(self, parameters):
+        """**RES:CAPCOUNT?** - Query packet capture count.
+        
+        C++ Implementation Details:
+        - Queries number of packets captured
+        - Returns capture count
+        - No parameters required
+        
+        Python TODO:
+        - Call packet capture count method
+        - Return capture count as bytes
+        """
+        response = None
+        # TODO: Implement query logic
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+
 # This table contains all the system SCPI commands. Note that queries must
 # come before the matching setting commands. Also if two commands start with
 # the same text then the longer one must come first.
@@ -624,6 +1749,144 @@ commandTable = [
     Cmnd(b"FETC:MOSSERRS?",        ScpiPacket.getTxIdle),
     Cmnd(b"RES:MOSSALRMS?",        ScpiPacket.getTxIdle),  # Alias for TXIDLE
     Cmnd(b"FETC:MOSSALRMS?",       ScpiPacket.getTxIdle),
+
+    # Additional RES Level Commands - Remaining entries from resLevel table
+    Cmnd(b"RES:LINECODE",          ScpiPacket.doResLinecodeLevel),
+    Cmnd(b"FETC:LINECODE",         ScpiPacket.doResLinecodeLevel),
+    Cmnd(b"RES:COLLISION",         ScpiPacket.doResCollisionLevel),
+    Cmnd(b"FETC:COLLISION",        ScpiPacket.doResCollisionLevel),
+    Cmnd(b"RES:PFCS",              ScpiPacket.doResPfcsLevel),
+    Cmnd(b"FETC:PFCS",             ScpiPacket.doResPfcsLevel),
+    Cmnd(b"RES:IPCHECKSUM",        ScpiPacket.doResIpChecksumLevel),
+    Cmnd(b"FETC:IPCHECKSUM",       ScpiPacket.doResIpChecksumLevel),
+    Cmnd(b"RES:SCANERRORS?",       ScpiPacket.getCurrentErrors),
+    Cmnd(b"FETC:SCANERRORS?",      ScpiPacket.getCurrentErrors),
+    Cmnd(b"RES:FCALIGN",           ScpiPacket.doResFcAlignLevel),
+    Cmnd(b"FETC:FCALIGN",          ScpiPacket.doResFcAlignLevel),
+    Cmnd(b"RES:OVERSIZED",         ScpiPacket.doResOversizedLevel),
+    Cmnd(b"FETC:OVERSIZED",        ScpiPacket.doResOversizedLevel),
+    Cmnd(b"RES:UNDERSIZED",        ScpiPacket.doResUndersizedLevel),
+    Cmnd(b"FETC:UNDERSIZED",       ScpiPacket.doResUndersizedLevel),
+    Cmnd(b"RES:LOSS",              ScpiPacket.doResCppLevel),
+    Cmnd(b"FETC:LOSS",             ScpiPacket.doResCppLevel),
+    Cmnd(b"RES:LOS",               ScpiPacket.doResLosLevel),
+    Cmnd(b"FETC:LOS",              ScpiPacket.doResLosLevel),
+    Cmnd(b"RES:LINK",              ScpiPacket.doResLinkLevel),
+    Cmnd(b"FETC:LINK",             ScpiPacket.doResLinkLevel),
+    Cmnd(b"RES:TXPACK?",           ScpiPacket.getResTxPackets),
+    Cmnd(b"FETC:TXPACK?",          ScpiPacket.getResTxPackets),
+    Cmnd(b"RES:RXPACK?",           ScpiPacket.getResRxPackets),
+    Cmnd(b"FETC:RXPACK?",          ScpiPacket.getResRxPackets),
+    Cmnd(b"RES:TXBYT?",            ScpiPacket.getResTxBytes),
+    Cmnd(b"FETC:TXBYT?",           ScpiPacket.getResTxBytes),
+    Cmnd(b"RES:RXBYT?",            ScpiPacket.getResRxBytes),
+    Cmnd(b"FETC:RXBYT?",           ScpiPacket.getResRxBytes),
+    Cmnd(b"RES:JUMBO?",            ScpiPacket.getResRxJumboPackets),
+    Cmnd(b"FETC:JUMBO?",           ScpiPacket.getResRxJumboPackets),
+    Cmnd(b"RES:PAUSE",             ScpiPacket.doResPauseLevel),
+    Cmnd(b"FETC:PAUSE",            ScpiPacket.doResPauseLevel),
+    Cmnd(b"RES:TXPACK",            ScpiPacket.doResTxPacketLevel),
+    Cmnd(b"FETC:TXPACK",           ScpiPacket.doResTxPacketLevel),
+    Cmnd(b"RES:VLAN",              ScpiPacket.doResVlanLevel),
+    Cmnd(b"FETC:VLAN",             ScpiPacket.doResVlanLevel),
+    Cmnd(b"RES:TXPCTBW?",          ScpiPacket.getResTxLinkPctBandwidthNone),
+    Cmnd(b"FETC:TXPCTBW?",         ScpiPacket.getResTxLinkPctBandwidthNone),
+    Cmnd(b"RES:RXPCTBW?",          ScpiPacket.getResRxLinkPctBandwidthNone),
+    Cmnd(b"FETC:RXPCTBW?",         ScpiPacket.getResRxLinkPctBandwidthNone),
+    Cmnd(b"RES:TXPPS?",            ScpiPacket.getResTxLinkPacketPerSecNone),
+    Cmnd(b"FETC:TXPPS?",           ScpiPacket.getResTxLinkPacketPerSecNone),
+    Cmnd(b"RES:RXPPS?",            ScpiPacket.getResRxLinkPacketPerSecNone),
+    Cmnd(b"FETC:RXPPS?",           ScpiPacket.getResRxLinkPacketPerSecNone),
+    Cmnd(b"RES:TXMBPS?",           ScpiPacket.getResTxLinkKBPerSecNone),
+    Cmnd(b"FETC:TXMBPS?",          ScpiPacket.getResTxLinkKBPerSecNone),
+    Cmnd(b"RES:RXMBPS?",           ScpiPacket.getResRxLinkKBPerSecNone),
+    Cmnd(b"FETC:RXMBPS?",          ScpiPacket.getResRxLinkKBPerSecNone),
+    Cmnd(b"RES:SPM?",              ScpiPacket.getResSPM),
+    Cmnd(b"FETC:SPM?",             ScpiPacket.getResSPM),
+    Cmnd(b"RES:STSD?",             ScpiPacket.getResSTSD),
+    Cmnd(b"FETC:STSD?",            ScpiPacket.getResSTSD),
+    Cmnd(b"RES:EVENTLOG",          ScpiPacket.getEventLog),
+    Cmnd(b"FETC:EVENTLOG",         ScpiPacket.getEventLog),
+    Cmnd(b"RES:RF",                ScpiPacket.doResRfLevel),
+    Cmnd(b"FETC:RF",               ScpiPacket.doResRfLevel),
+    Cmnd(b"RES:LFD",               ScpiPacket.doResLfdLevel),
+    Cmnd(b"FETC:LFD",              ScpiPacket.doResLfdLevel),
+    Cmnd(b"RES:UCHEC",             ScpiPacket.doResUnCorrCHecLevel),
+    Cmnd(b"FETC:UCHEC",            ScpiPacket.doResUnCorrCHecLevel),
+    Cmnd(b"RES:CHEC",              ScpiPacket.doResCorrCHecLevel),
+    Cmnd(b"FETC:CHEC",             ScpiPacket.doResCorrCHecLevel),
+    Cmnd(b"RES:UTHEC",             ScpiPacket.doResUnCorrTHecLevel),
+    Cmnd(b"FETC:UTHEC",            ScpiPacket.doResUnCorrTHecLevel),
+    Cmnd(b"RES:THEC",              ScpiPacket.doResCorrTHecLevel),
+    Cmnd(b"FETC:THEC",             ScpiPacket.doResCorrTHecLevel),
+    Cmnd(b"RES:UEHEC",             ScpiPacket.doResUnCorrEHecLevel),
+    Cmnd(b"FETC:UEHEC",            ScpiPacket.doResUnCorrEHecLevel),
+    Cmnd(b"RES:EHEC",              ScpiPacket.doResCorrEHecLevel),
+    Cmnd(b"FETC:EHEC",             ScpiPacket.doResCorrEHecLevel),
+    Cmnd(b"RES:SFCS",              ScpiPacket.doResSfcsLevel),
+    Cmnd(b"FETC:SFCS",             ScpiPacket.doResSfcsLevel),
+    Cmnd(b"RES:LF",                ScpiPacket.doResLfLevel),
+    Cmnd(b"FETC:LF",               ScpiPacket.doResLfLevel),
+    Cmnd(b"RES:LOCCS",             ScpiPacket.doResLoccsLevel),
+    Cmnd(b"FETC:LOCCS",            ScpiPacket.doResLoccsLevel),
+    Cmnd(b"RES:LOCS",              ScpiPacket.doResLocLevel),
+    Cmnd(b"FETC:LOCS",             ScpiPacket.doResLocLevel),
+    Cmnd(b"RES:CRC",               ScpiPacket.doResFcsLevel),
+    Cmnd(b"FETC:CRC",              ScpiPacket.doResFcsLevel),
+    Cmnd(b"RES:FABRICLOGIN?",      ScpiPacket.getFabricLoginStatus),
+    Cmnd(b"FETC:FABRICLOGIN?",     ScpiPacket.getFabricLoginStatus),
+    Cmnd(b"RES:PORTLOGIN?",        ScpiPacket.getPortLoginStatus),
+    Cmnd(b"FETC:PORTLOGIN?",       ScpiPacket.getPortLoginStatus),
+    Cmnd(b"RES:FCDISP",            ScpiPacket.doResFcDispLevel),
+    Cmnd(b"FETC:FCDISP",           ScpiPacket.doResFcDispLevel),
+    Cmnd(b"RES:FCEOFA",            ScpiPacket.doResFcEofALevel),
+    Cmnd(b"FETC:FCEOFA",           ScpiPacket.doResFcEofALevel),
+    Cmnd(b"RES:RUNT",              ScpiPacket.doResRuntLevel),
+    Cmnd(b"FETC:RUNT",             ScpiPacket.doResRuntLevel),
+    Cmnd(b"RES:FCS",               ScpiPacket.doResFcsLevel),
+    Cmnd(b"FETC:FCS",              ScpiPacket.doResFcsLevel),
+    Cmnd(b"RES:INVSUPER",          ScpiPacket.doResInvSuperLevel),
+    Cmnd(b"FETC:INVSUPER",         ScpiPacket.doResInvSuperLevel),
+    Cmnd(b"RES:JABBER",            ScpiPacket.doResJabberLevel),
+    Cmnd(b"FETC:JABBER",           ScpiPacket.doResJabberLevel),
+    Cmnd(b"RES:TCPERR",            ScpiPacket.doResTcpChecksumLevel),
+    Cmnd(b"FETC:TCPERR",           ScpiPacket.doResTcpChecksumLevel),
+    Cmnd(b"RES:UDPERR",            ScpiPacket.doResUdpChecksumLevel),
+    Cmnd(b"FETC:UDPERR",           ScpiPacket.doResUdpChecksumLevel),
+    Cmnd(b"RES:SCANALARMS?",       ScpiPacket.getCurrentAlarms),
+    Cmnd(b"FETC:SCANALARMS?",      ScpiPacket.getCurrentAlarms),
+    Cmnd(b"RES:FCEOFERR",          ScpiPacket.doResFcEofErrLevel),
+    Cmnd(b"FETC:FCEOFERR",         ScpiPacket.doResFcEofErrLevel),
+    Cmnd(b"RES:AL",                ScpiPacket.doResAlarmLevel),
+    Cmnd(b"FETC:AL",               ScpiPacket.doResAlarmLevel),
+    Cmnd(b"RES:DISPARITY",         ScpiPacket.doResDisparityLevel),
+    Cmnd(b"FETC:DISPARITY",        ScpiPacket.doResDisparityLevel),
+    Cmnd(b"RES:CAPTURE",           ScpiPacket.doResCaptureLevel),
+    Cmnd(b"FETC:CAPTURE",          ScpiPacket.doResCaptureLevel),
+    Cmnd(b"RES:HDRMM",             ScpiPacket.doResHdrMMLevel),
+    Cmnd(b"FETC:HDRMM",            ScpiPacket.doResHdrMMLevel),
+    Cmnd(b"RES:RXPACK",            ScpiPacket.doResRxPacketLevel),
+    Cmnd(b"FETC:RXPACK",           ScpiPacket.doResRxPacketLevel),
+    Cmnd(b"RES:UTIL",              ScpiPacket.doResUtilLevel),
+    Cmnd(b"FETC:UTIL",             ScpiPacket.doResUtilLevel),
+    Cmnd(b"RES:MPLS",              ScpiPacket.doResMplsLevel),
+    Cmnd(b"FETC:MPLS",             ScpiPacket.doResMplsLevel),
+    Cmnd(b"RES:PACK",              ScpiPacket.doResPacketLevel),
+    Cmnd(b"FETC:PACK",             ScpiPacket.doResPacketLevel),
+    Cmnd(b"RES:SUPJUMBO?",         ScpiPacket.getResOversizedCount),
+    Cmnd(b"FETC:SUPJUMBO?",        ScpiPacket.getResOversizedCount),
+    Cmnd(b"RES:SYNCHDR",           ScpiPacket.doResSyncHdrLevel),
+    Cmnd(b"FETC:SYNCHDR",          ScpiPacket.doResSyncHdrLevel),
+    Cmnd(b"RES:BLKLOC",            ScpiPacket.doResBlockLockLossLevel),
+    Cmnd(b"FETC:BLKLOC",           ScpiPacket.doResBlockLockLossLevel),
+    Cmnd(b"RES:HIBER",             ScpiPacket.doResHiBerLevel),
+    Cmnd(b"FETC:HIBER",            ScpiPacket.doResHiBerLevel),
+    Cmnd(b"RES:PAUSED",            ScpiPacket.doResPauseLevel),  # Alias for PAUSE
+    Cmnd(b"FETC:PAUSED",           ScpiPacket.doResPauseLevel),
+    Cmnd(b"RES:CAPSTATUS?",        ScpiPacket.getCaptureStatus),
+    Cmnd(b"FETC:CAPSTATUS?",       ScpiPacket.getCaptureStatus),
+    Cmnd(b"RES:CAPCOUNT?",         ScpiPacket.getCaptureCount),
+    Cmnd(b"FETC:CAPCOUNT?",        ScpiPacket.getCaptureCount),
     ]
 
 
