@@ -158,6 +158,27 @@ class ScpiPacket(object):
             response = b"%.2f dBm" % self.globals.veexPhy.stats.signalStrength
         return response
 
+    def getRxbCast(self, parameters):
+        """**FETC:RXBCAST?** - TODO: Add description
+        
+
+        TODO: Implement business logic
+
+
+        TODO: Add veexlib result mapping for return value
+
+        """
+        # No parameters
+        response = None
+        # TODO: Implement query logic
+        # Example:
+        # self.globals.veexPacket.sets.update()
+        # if self.globals.veexPacket.sets.field == veexlib.VALUE1:
+        #     response = b"VALUE1"
+        # else:
+        #     response = self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
+        
+        return self._errorResponse(ScpiErrorCode.INVALID_RESULTS)
 
 # This table contains all the system SCPI commands. Note that queries must
 # come before the matching setting commands. Also if two commands start with
